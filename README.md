@@ -26,9 +26,20 @@ If you feel like something is missing or could be improved, don't hesitate to op
 ### Content:
 - [Installation](#installation)
 - [Features](#features)
+    - [Accent Colors](#accent-colors)
+    - [Dark and Light Mode Support](#dark-and-light-mode-support)
+    - [Fonts and Icons](#fonts-and-icons)
+    - [Light or dark mode only classes](#light-or-dark-mode-only-classes)
 - [Components](#components)
-    - [Button](#button)
-    - [Switch](#switch)
+    - [Buttons](#buttons)
+    - [Inputs](#inputs)
+    - [Select](#select)
+    - [Radio](#radio)
+    - [Toggle](#toggle)
+    - [Card](#card)
+    - [List](#list)
+    - [Tabs](#tabs)
+    - [Carousel](#carousel)
 
 ### Installation
 Add this line to your HTML file:
