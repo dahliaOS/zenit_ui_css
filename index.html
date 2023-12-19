@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Zenit UI</title>
+<link rel="icon" type="image/png" href="https://dahliaos.io/images/favicon/favicon-32x32.png"/>
+<link rel="stylesheet" href="https://raw.githubusercontent.com/dahliaOS/zenit_ui_css/main/zenitUI.css">
+</head>
+<body>
+<style>:root {--accent-color: var(--blood_red);}</style>
+<h1>Zenit UI</h1>
+<p>123456790</p>
+<p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+<p>abcdefghijklmnopqrstuvwxyz</p>
+<div style="display: flex; flex-direction: column; row-gap: 15px;">
+<button class="primary bg_sky_blue">Primary</button>
+<button class="secondary">Secondary</button>
+<button disabled>Disabled</button>
+<button class="primary pill bg_sky_blue">Primary</button>
+<button class="secondary pill bg_sky_blue">Secondary</button>
+<button class="pill" disabled>Disabled</button>
+
+<button class="icon-text"><i class="material-icons">cloud</i>Cloud</button>
+<button class="icon"><i class="material-icons">visibility</i></button>
+<button class="icon"><i class="material-icons">add</i></button>
+<button class="icon"><i class="material-icons">close</i></button>
+
+<input type="text" class="input" placeholder="Enter your Email address here"></input>
+<input type="text" class="input" placeholder="Enter your Email address here" autofocus></input>
+<input type="text" class="input" placeholder="Enter your Email address here" disabled></input>
+
+<select>
+    <option>Select</option>
+    <option>zenitUI CSS</option>
+</select>
+
+<select disabled>
+    <option>Select</option>
+    <option>zenitUI CSS</option>
+</select>
+
+<input type="checkbox">
+<input type="checkbox" checked>
+<input type="radio">
+<input type="radio" checked>
+<input type="checkbox" class="toggle" id="toggle" /><label class="toggle" for="toggle"></label>
+<input type="checkbox" class="toggle" id="toggle1" checked/><label class="toggle" for="toggle1"></label>
+<div class="card">
+    <p>Card</p>
+</div>
+
+<div class="list">
+    <p>1</p>
+    <p>2</p>
+    <p>3</p>
+</div>
+
+<div class="tabs">
+	<input type="radio" name="tabs" id="tab1" checked>
+    <label for="tab1"><i class="material-icons">spa</i> Tab 1</label>
+	<div>Tab with text and icon</div>
+	<input type="radio" name="tabs" id="tab2">
+    <label for="tab2">Tab 2</label>
+	<div>Tab with text only</div>
+    <input type="radio" name="tabs" id="tab3">
+    <label for="tab3"><i class="material-icons">spa</i></label>
+    <div>Tab with icon only</div>
+</div>
+</div>
+<ul class="zenit_carousel">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+<div class="zenit_theme_toggle">
+    <input type="radio" name="options" id="toggle_system">
+    <input type="radio" name="options" id="toggle_light" checked>
+    <input type="radio" name="options" id="toggle_dark">
+    <label for="toggle_dark"><i class="material-icons">dark_mode</i></label>
+    <label for="toggle_light"><i class="material-icons">light_mode</i></label>
+    <label for="toggle_system"><i class="material-icons">devices</i></label>
+</div>
+</body>
+</html>

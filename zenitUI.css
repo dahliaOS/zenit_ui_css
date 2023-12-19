@@ -1,0 +1,637 @@
+/* ZenitUI CSS */
+/* Version 0.0.12 */
+
+/*
+Copyright 2024 The dahliaOS Authors
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
+
+/* Fonts */
+/* Manrope */
+@import url('https://fonts.googleapis.com/css?family=Inter');
+
+/* icons */
+/* Material Icons */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+:root {
+	/* Color System */
+
+    /* Aqua Blue */
+    --aqua_blue_light: rgb(0, 153, 247);
+    --aqua_blue_dark: rgb(0, 123, 217);
+
+    /* Blood Red */
+    --blood_red_light: rgb(240, 0, 40);
+    --blood_red_dark: rgb(213, 0, 26);
+
+    /* Leaf Green */
+    --leaf_green_light: rgb(0, 178, 110);
+    --leaf_green_dark: rgb(0, 153, 102);
+
+    /* Magma Orange */
+    --magma_orange_light: rgb(255, 77, 0);
+    --magma_orange_dark: rgb(229, 80, 0);
+
+    /* Pine Teal */
+    --pine_teal_light: rgb(0, 128, 105);
+    --pine_teal_dark: rgb(0, 102, 88);
+
+    /* Sky Blue */
+    --sky_blue_light: rgb(4, 117, 247);
+    --sky_blue_dark: rgb(4, 94, 221);
+    
+    /* background and border */
+    --bg_light: rgb(250, 250, 250);
+    --bg_selected_light: rgb(217, 217, 217); 
+    --bg_dark: rgb(37, 37, 37);
+    --bg_selected_dark: rgb(59, 59, 59);
+    --border_color_dark: rgba(250, 250, 250, 0.1);
+    --scroll_bar_dark: rgba(250, 250, 250, 0.35);
+    --scroll_bar_hover_dark: rgba(250, 250, 250, 0.7);
+    --border_color_light: rgba(37, 37, 37, 0.1);
+    --scroll_bar_light: rgba(37, 37, 37, 0.35);
+    --scroll_bar_hover_light: rgba(37, 37, 37, 0.7);
+
+    /* Dahlia Color Set */
+    --dahlia_orange: rgb(255, 61, 0);
+
+    /* Light mode */
+	--bg: var(--bg_light);
+    --bg_selected: var(--bg_selected_light);
+    --border_color: var(--border_color_light);
+    --fg: var(--bg_dark);
+    --scroll_bar: var(--scroll_bar_light);
+    --scroll_bar_hover: var(--scroll_bar_hover_light);
+
+    --aqua_blue: var(--aqua_blue_light);
+    --blood_red: var(--blood_red_light);
+    --leaf_green: var(--leaf_green_light);
+    --magma_orange: var(--magma_orange_light);
+    --pine_teal: var(--pine_teal_light);
+    --sky_blue: var(--sky_blue_light);
+    --display_light_mode: block;
+    --display_dark_mode: none;
+
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+    	--bg: var(--bg_dark);
+        --bg_selected: var(--bg_selected_dark);
+        --border_color: var(--border_color_dark);
+        --fg: var(--bg_light);
+        --scroll_bar: var(--scroll_bar_dark);
+        --scroll_bar_hover: var(--scroll_bar_hover_dark);
+        
+        --aqua_blue: var(--aqua_blue_dark);
+        --blood_red: var(--blood_red_dark);
+        --leaf_green: var(--leaf_green_dark);
+        --magma_orange: var(--magma_orange_dark);
+        --pine_teal: var(--pine_teal_dark);
+        --sky_blue: var(--sky_blue_dark);
+        --display_light_mode: none;
+        --display_dark_mode: block;
+    }
+
+    --theme-color: var(--bg);
+
+    /* when --accent-color is not defined use --standard-color */
+    --standard-color: var(--sky_blue);
+}
+
+/* Zenit Theme Toggle */
+:root:has(.zenit_theme_toggle):has(input[id=toggle_dark]:checked) {
+    /* Light mode */
+	--bg: var(--bg_light);
+    --bg_selected: var(--bg_selected_light);
+    --border_color: var(--border_color_light);
+    --fg: var(--bg_dark);
+    --scroll_bar: var(--scroll_bar_light);
+    --scroll_bar_hover: var(--scroll_bar_hover_light);
+
+    --aqua_blue: var(--aqua_blue_light);
+    --blood_red: var(--blood_red_light);
+    --leaf_green: var(--leaf_green_light);
+    --magma_orange: var(--magma_orange_light);
+    --pine_teal: var(--pine_teal_light);
+    --sky_blue: var(--sky_blue_light);
+
+    --theme-color: var(--bg);
+    --display_light_mode: block;
+    --display_dark_mode: none;
+
+
+    --theme-color: var(--bg);
+}
+
+:root:has(.zenit_theme_toggle):has(input[id=toggle_system]:checked) {
+    /* Dark mode */
+    --bg: var(--bg_dark);
+    --bg_selected: var(--bg_selected_dark);
+    --border_color: var(--border_color_dark);
+    --fg: var(--bg_light);
+    --scroll_bar: var(--scroll_bar_dark);
+    --scroll_bar_hover: var(--scroll_bar_hover_dark);
+    
+    --aqua_blue: var(--aqua_blue_dark);
+    --blood_red: var(--blood_red_dark);
+    --leaf_green: var(--leaf_green_dark);
+    --magma_orange: var(--magma_orange_dark);
+    --pine_teal: var(--pine_teal_dark);
+    --sky_blue: var(--sky_blue_dark);
+
+    --theme-color: var(--bg);
+    --display_light_mode: none;
+    --display_dark_mode: block;
+
+
+    --theme-color: var(--bg);
+}
+
+/* Dark and Light mode classes */
+
+.dark_mode_only {
+    display: var(--display_dark_mode);
+}
+
+.light_mode_only {
+    display: var(--display_light_mode);
+}
+
+.bg_sky_blue {
+	background: var(--sky_blue) !important;
+}
+
+.fg_sky_blue {
+	color: var(--sky_blue) !important;
+    accent-color: var(--sky_blue) !important;
+}
+
+.border_sky_blue {
+    border-color: var(--sky_blue) !important;
+}
+
+.bg_aqua_blue {
+    background: var(--aqua_blue) !important;
+}
+
+.fg_aqua_blue {
+    color: var(--aqua_blue) !important;
+    accent-color: var(--aqua_blue) !important;
+}
+
+.border_aqua_blue {
+    border-color: var(--aqua_blue) !important;
+}
+
+.bg_blood_red {
+    background: var(--blood_red) !important;
+}
+
+.fg_blood_red {
+    color: var(--blood_red) !important;
+    accent-color: var(--blood_red) !important;
+}
+
+.border_blood_red {
+    border-color: var(--blood_red) !important;
+}
+
+.bg_leaf_green {
+    background: var(--leaf_green) !important;
+}
+
+.fg_leaf_green {
+    color: var(--leaf_green) !important;
+    accent-color: var(--leaf_green) !important;
+}
+
+.border_leaf_green {
+    border-color: var(--leaf_green) !important;
+}
+
+.bg_magma_orange {
+    background: var(--magma_orange) !important;
+}
+
+.fg_magma_orange {
+    color: var(--magma_orange) !important;
+    accent-color: var(--magma_orange) !important;
+}
+
+.border_magma_orange {
+    border-color: var(--magma_orange) !important;
+}
+
+.bg_pine_teal {
+    background: var(--pine_teal) !important;
+}
+
+.fg_pine_teal {
+    color: var(--pine_teal) !important;
+    accent-color: var(--pine_teal) !important;
+}
+
+.border_pine_teal {
+    border-color: var(--pine_teal) !important;
+}
+
+.bg_dahlia_orange {
+    background: var(--dahlia_orange) !important;
+}
+
+.fg_dahlia_orange {
+    color: var(--dahlia_orange) !important;
+    accent-color: var(--dahlia_orange) !important;
+}
+
+.border_dahlia_orange {
+    border-color: var(--dahlia_orange) !important;
+}
+
+/* Set Body */
+body {
+	font-family: 'Inter', sans-serif;
+	color: var(--fg);
+    background: var(--bg);
+    font-size: 1rem;
+}
+
+/* Buttons */
+
+button, .zenit_theme_toggle label {
+    color: var(--fg);
+    padding: 0.8333em 1.1667em; /* 10px padding scaled to 12px font size */
+    outline: none;
+    border: none;
+    border-radius: 0.5em; /* 6px border radius scaled to 12px font size */
+    font-weight: 600;
+    font-size: 12px;
+    width: fit-content;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+
+button:disabled {
+    color: var(--fg);
+    background: var(--bg_selected);
+    filter: opacity(0.5);
+    cursor: not-allowed;
+} 
+
+button:not(:disabled):hover {
+    filter: brightness(150%);
+}
+
+/* set button to default background */
+button:not(.primary):not(.secondary)
+{
+    background: var(--bg_selected);
+}
+
+    /* icon text button */
+
+.icon-text, .tabs label, .zenit_theme_toggle label {
+    background: var(--bg_selected);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7em;
+    display: flex;
+}
+
+/* icon button */
+
+.icon { 
+    background: var(--bg_selected);
+    aspect-ratio: 1/1;
+    padding: 0.5em;
+    display: flex;
+}
+
+    /* hide all elements in the button except icons */
+.icon *:not(i) {
+    display: none;
+}
+
+/* inputs */
+
+input {
+    color: var(--fg);
+    background: var(--bg_selected);
+    padding: 0.8333em 1.1667em; /* 10px padding scaled to 12px font size */
+    border: 0.125rem solid var(--bg_selected);
+    border-radius: 0.5em; /* 6px border radius scaled to 12px font size */
+    outline: none;
+    width: fit-content;
+    /* the width is the length of the text + 24px */
+
+}
+
+input:focus {
+    border: 0.125rem solid var(--accent-color, var(--standard-color));
+}
+
+/* when the disabled class is applied to input */
+input:disabled {
+    color: var(--fg);
+    background: var(--bg_selected);
+    filter: opacity(0.5);
+    cursor: not-allowed;
+}
+
+/* checbox */
+input[type=checkbox]:not(.toggle) {
+    width: 1.5em;
+    height: 1.5em;
+    margin: 0;
+    padding: 0;
+    border: 0.125rem solid var(--bg_selected);
+    border-radius: 0.7em;
+    outline: none;
+    background: var(--bg_selected);
+    accent-color: var(--accent-color, var(--standard-color));
+}
+
+input[type=radio] {
+    width: 1.5em;
+    height: 1.5em;
+    margin: 0;
+    padding: 0;
+    border: 0.125rem solid var(--bg_selected);
+    border-radius: 50%;
+    outline: none;
+    background: var(--bg_selected);
+    accent-color: var(--accent-color, var(--standard-color));
+}
+
+/* cards and lists */
+
+.card, .list, .tabs div {
+    background: var(--bg);
+    border: 0.1rem solid var(--border_color);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    width: auto;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+}
+
+/* styles */
+
+.pill {
+    border-radius: 2rem;
+}
+
+.primary {
+	color: var(--bg);
+    background: var(--accent-color, var(--standard-color));
+}
+
+.secondary {
+    color: var(--fg);
+    background: var(--bg_selected);
+}
+
+/* scrollbar */
+  /* width */
+::-webkit-scrollbar {
+    width: 0.75rem;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: none; 
+}
+   
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--scroll_bar);
+    border-radius: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scroll_bar_hover);
+}
+
+/* tabs */
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: sans-serif;
+    gap: 10px;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+  
+.tabs label {
+    padding: 0.8333em 1.1667em; /* 10px padding scaled to 12px font size */
+    cursor: pointer;
+    background: none;
+    color: var(--fg);
+    border-radius: 1em; /* 6px border radius scaled to 12px font size */
+    font-weight: 600;
+    font-size: 12px;
+    width: fit-content;
+}
+
+.tabs label:first-of-type {
+    margin-left: 1rem;
+}
+  
+.tabs input {
+    display: none;
+}
+  
+.tabs div {
+    order: 1;
+    width: 100%;
+    font-size: 0.9em;
+    display: none;
+}
+  
+.tabs input:checked + label {
+    font-weight: bold;
+    background: var(--bg_selected);
+}
+  
+.tabs input:checked + label + div {
+    display: initial;
+}
+
+/* toggle */
+/* we check if the input and label have the class toggle so we don't need to reset the label and checbox for other components*/
+input[type=checkbox][class=toggle]{
+	height: 0;
+	width: 0;
+	visibility: hidden;
+    margin: 0;
+    position: absolute;
+}
+
+label[class=toggle] {
+	cursor: pointer;
+	text-indent: -9999px;
+	width: 2.8rem;
+	height: 1.5rem;
+	background: var(--bg_selected);
+	display: block;
+	border-radius: 100px;
+	position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+label[class=toggle]:after {
+	content: '';
+	position: absolute;
+	top: 0.30rem;
+	left: 0.30rem;
+	width: 0.9rem;
+    height: auto;
+    aspect-ratio: 1/1;
+	background: var(--scroll_bar);
+	border-radius: 100%;
+	transition: 0.1s;
+    display: flex;
+}
+
+input[class=toggle]:checked + label {
+	background: var(--accent-color, var(--standard-color));
+}
+
+input[class=toggle]:checked + label:after {
+	left: calc(100% - 0.30rem);
+	transform: translateX(-100%);
+    background: var(--bg);
+}
+
+/* dropdown */
+select::-ms-expand {
+    display: none;
+}
+
+select {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0.5em 2em 0.5em 0.5em;
+    border: 0.125rem solid var(--bg_selected);
+    border-radius: 0.5em;
+    outline: none;
+    font: inherit;
+    line-height: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+    background-position: right 15px top 1em, right 10px top 1em;
+    background-size: 5px 5px, 5px 5px;
+    background-color: var(--bg_4);
+    color: var(--fg);
+    max-width: fit-content;
+    cursor: pointer;
+}
+
+select:not(:disabled)::after, select:not(:disabled)::before, select:not(:disabled):active, select:not(:disabled):focus {
+    background-color: var(--bg_selected);
+    border: 0.125rem solid var(--accent-color, var(--standard-color));
+}
+
+select:disabled {
+    color: var(--fg);
+    background-color: var(--bg_selected);
+    filter: opacity(0.5);
+    cursor: not-allowed;
+}
+
+/* selection */
+::-moz-selection { /* Code for Firefox */
+    background: var(--accent-color, var(--standard-color));
+}
+  
+::selection {
+    background: var(--accent-color, var(--standard-color));
+}
+
+/* Zenit Theme Toggle */
+.zenit_theme_toggle {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 1000;
+}
+
+.zenit_theme_toggle input, .zenit_theme_toggle label {
+    display: none;
+}
+
+.zenit_theme_toggle label {	
+    user-select: none;
+    text-align: center;
+    padding: 0.8rem;
+    background: var(--bg_selected);
+    border: 0.125rem solid var(--border_color);
+    border-radius: 0.8rem;
+}
+
+.zenit_theme_toggle label i {
+    font-size: 24px;
+}
+
+.zenit_theme_toggle #toggle_dark:checked ~ label[for="toggle_light"],
+.zenit_theme_toggle #toggle_light:checked ~ label[for="toggle_system"],
+.zenit_theme_toggle #toggle_system:checked ~ label[for="toggle_dark"] {
+        display: flex;
+}
+
+/* Image Carousel */
+.zenit_carousel {
+    display: flex;
+    list-style: none;
+    max-width: 40vw;
+    margin-block: 2rem;
+    margin-inline: auto;
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+    border-radius: 1rem;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0.125rem solid var(--border_color);
+}
+  
+.zenit_carousel::-webkit-scrollbar {
+    display: none;
+}
+  
+.zenit_carousel li {
+    display: grid;
+    place-items: center;
+    color: var(--fg);
+    font-size: 3rem;
+    aspect-ratio: 2/1;
+    width: 100%;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    background-color: var(--bg);
+    background-size: cover;
+}
