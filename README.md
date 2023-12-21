@@ -19,6 +19,10 @@ ZenitUI CSS is a CSS framework that helps you design beautiful web apps using CS
 
 Unlike almost any other CSS framework, ZenitUI CSS provides css only components where possible. This means that you don't have to use JavaScript for every component.
 
+![image](https://github.com/dahliaOS/zenit_ui_css/assets/58103738/095fb716-c267-4741-9dd9-3ee499c28663)
+> A demo page that only uses zenitUI CSS.
+
+
 ### Contributing
 
 If you feel like something is missing or could be improved, don't hesitate to open a pull request or an issue.
