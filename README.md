@@ -46,7 +46,7 @@ If you feel like something is missing or could be improved, don't hesitate to op
 ### Installation
 Add this line to your HTML file:
 ```html
-<link rel="stylesheet" href="https://cdn.statically.io/gh/dahliaOS/zenit_ui_css/main/zenitUI.css">
+<link rel="stylesheet" href="https://dahliaos.github.io/zenit_ui_css/zenitUI.css">
 ```
 
 ### Features
